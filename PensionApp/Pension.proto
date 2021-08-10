@@ -1,0 +1,25 @@
+syntax = "proto3";
+/*
+ * Project: Final Practical gRPC
+ * Purpose: Demonstrate learning and understanding of gRPC
+ * Coder: Sonia Friesen, 0813682        
+ * Date: April 19th 2021
+ */
+option csharp_namespace = "PensionServiceApp";
+service Pension { 
+  rpc GetFullPensionAmount(PensionRequest) returns (PensionResponse);
+}
+
+// The request message containing the pension info
+message PensionRequest {
+  sint32 age = 1;
+  sint32 numYears = 2;
+  sint32 salary = 3;
+}
+
+// The response message containing the pension.
+message PensionResponse {
+	double base_amount = 1;
+	double bridge_amount = 2;
+	
+}
